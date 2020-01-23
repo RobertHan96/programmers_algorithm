@@ -22,12 +22,17 @@ def solution(people, limit):
     light = 0
     heavy = len(people)-1
     count = 0
+    # 가벼운 사람이 무거운 사람의 인덱스값보다 높으면 배열 전체를 다 순회한 것이므로 아래와 같이 while 조건문 사용
     while(light < heavy):
         if people[light]+people[heavy] <= limit:
+            # 가장 가벼운 사람과 무거운 사람의 합이 무게제한보다 적은 경우, 
+            # 무거운 사람의 위치는 -1 하고, 가벼운 사람의 위치는 +1해서 배열 전체를 검사할 수 있도록함
             count += 1
             light += 1
             heavy -= 1
         else:
+            # 조건문을 돌때마다 보트의 개수를 늘리는 것이 아니고, 배열의 길이만큼 보트가 있다고 가정하고,
+            # 두명 이상이 한보트에 탄경우만 구한다음 전체 배열 길이에서 빼면 더 간단하게 문제 해결 가능
             heavy -= 1
     return len(people)-count
 

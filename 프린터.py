@@ -27,8 +27,10 @@ def solution(p, l):
             maxValue = max(p)
         else:
             p.append(v)
+            # l의 값은 0이되어 더 뺄값이 없으므로 남은 배열의 크기만큼 l에 다시 할당
             if l == 0:
                 l = len(p)-1
+            # l의 값이 남아 있다면 -1을 하면서 리턴값 answer의 값을 1증가하면서 출력순서 증가
             else:
                 l -= 1
     return answer

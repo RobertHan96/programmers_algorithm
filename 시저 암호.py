@@ -25,4 +25,4 @@ def solution(s, n):
     return answer
 
 
-solution(s, n)
+print(solution(s, n))
