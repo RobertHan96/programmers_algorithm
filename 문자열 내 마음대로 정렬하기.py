@@ -15,6 +15,8 @@ case2 = ['abzcd', 'cdzab', 'abzfg', 'abzaa', 'abzbb', 'bbzaa']
 
 # n+1이후 문자열만 비교하면 됨
 
+# sorted 함수를 두번 중첩해서 사용해도 정상 사용됨
+
 
 def solution(strings, n):
     return sorted(sorted(strings), key=lambda i: i[n])
