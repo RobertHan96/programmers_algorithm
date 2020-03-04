@@ -27,14 +27,14 @@ def solution(number, k):
 
 print(solution('1924', 1))
 
-
+# 가장 간결하고 풀이가 많은 함수
 def best_solution(number, k):
-    stack = [number[0]]
-    for num in number[1:]:
-        while len(stack) > 0 and stack[-1] < num and k > 0:
+    stack = [number[0]] #
+    for num in number[1:]: # 문자열길이 만큼 검사하고, 문자의 위치가 바뀔때마다 k-1을 하므로, k >0을 종료조건으로 while 진행
+        while len(stack) > 0 and stack[-1] < num and k > 0: 
             k -= 1
-            stack.pop()
-        stack.append(num)
-    if k != 0:
-        stack = stack[:-k]
-    return ''.join(stack)
+            stack.pop() # 숫자의 순서가 바뀔 경우라면, 즉 앞의 수보다 작다면 stack에서 제거하고 k를 1감소
+        stack.append(num) # 아니라면 그대로 stack에 문자 추가
+    if k != 0: # 위에서 검사가 다끝나면 큰 순서대로 stack 저장된 상태임, 이때 k != 0이라면 문자길이가 길기 때문에 슬라이싱 진행
+        stack = stack[:-k] # -k 만큼 뒤에 남은 문자를 잘라줌
+    return ''.join(stack) # stack남은 최종 정답을 join으로 묶어서 결과로 반환

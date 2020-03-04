@@ -7,7 +7,7 @@
 def solution(brown, red):
     answer = []
     n = brown + red
-    for i in range(1, n+1):
+    for i in range(1, n):
         if i * (i+1) == n:
             answer.append(i)
             answer.append(i+1)
@@ -15,7 +15,7 @@ def solution(brown, red):
     return answer
 
 
-print(solution(8, 1))
+print(solution(24, ))
 
 # 두개의 파라미터를 더한수의 공배수가 정답임
 # 가로길이 >= 세로길이 이므로 공배수를 구해서, 큰 값을 앞에 넣어서 리턴
