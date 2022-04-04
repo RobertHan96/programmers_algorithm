@@ -9,7 +9,7 @@ min_ = 51
 
 
 def dfs(now, target, words, history=[], depth=0):
-    global min_
+    global min_  # 입력값이 최대 50까지이므로 51을 할당한 후 재귀함수 실행
     print(now, history)
     if now == target:
         min_ = min(min_, depth)

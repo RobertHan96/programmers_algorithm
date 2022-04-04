@@ -16,5 +16,21 @@ def solution(prices):
                 answer[i] += 1
     return answer
 
+# 큐를 이용해서 문제 의도에 맞게 잘 풀이한 해답
+from collections import deque
+def solution(prices):
+    answer = []
+    prices = deque(prices)
+    while prices:
+        c = prices.popleft()
 
-print(solution(test))
+        count = 0
+        for i in prices:
+            if c > i:
+                count += 1
+                break
+            count += 1
+
+        answer.append(count)
+
+    return answer
